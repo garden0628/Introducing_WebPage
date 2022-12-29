@@ -396,6 +396,7 @@ opacity: 1;
   align-items: center;
   justify-content: center;
   cursor: zoom-out;
+  display: none;
 }
 .lightbox .lightbox-img{
   max-height: 600px;
@@ -459,8 +460,10 @@ opacity: 1;
 .lightbox .lightbox-controls .prev img, .lightbox .lightbox-controls .next img{
   width: 30px;
   height: 30px;
-  background-color: rgba(0, 0, 0, 0.5);
   padding: 5px;
   border-radius: 2px;
   transition: all 0.5s;
+}
+.lightbox .lightbox-controls .prev:hover img, .lightbox .lightbox-controls .next:hover img{
+  background-color: rgba(0, 0, 0, 0.5);
 }
