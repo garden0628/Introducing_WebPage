@@ -7,6 +7,14 @@
   </head>
 <body>
 
+  <!-- Preloader Start -->
+  <div class="preloader">
+    <div class="loader">
+
+    </div>
+  </div>
+  <!-- Preloader End -->
+
 <!-- Header Start -->
   <header class="header">
     <div class="container">
@@ -14,13 +22,16 @@
         <div class="brand-name">
           <a href="page.html">GARDEN.</a>
         </div>
+        <div class="nav-toggle">
+          <span></span>
+        </div>
         <nav class="nav">
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Works</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#works">Works</a></li>
+            <li><a href="#contact">Contact</a></li>
           </ul>
         </nav>
       </div>
@@ -29,7 +40,7 @@
 <!-- Header End -->
 
 <!-- Home Selection Start -->
-<section class="home-section">
+<section class="home-section" id="home">
   <!-- shape -->
   <div class="shape-01">
 
@@ -43,12 +54,14 @@
     </div>
   </div>
   <!-- scroll down -->
-  <a href="#" class="scroll-down"><img src="img/icons/arrow-down.svg" alt="scroll Down"></a>
+  <a href="#about" class="scroll-down">
+    <img src="img/icons/arrow-down.svg" alt="scroll Down">
+  </a>
 </section>
 <!-- Home Selection End -->
 
 <!-- About Section Start -->
-<section class="about-section">
+<section class="about-section" id="about">
   <div class="container">
     <div class="row">
       <div class="about-img">
@@ -96,7 +109,7 @@
 <!-- About Section End -->
 
 <!-- Service Section Start -->
-<section class="service-section">
+<section class="service-section" id="services">
   <div class="container">
     <div class="row">
       <div class="section-title">
@@ -165,7 +178,7 @@
 <!-- Service Section End -->
 
 <!-- Work Section Start -->
-<section class="work-section">
+<section class="work-section" id="works">
   <div class="container">
     <div class="row">
       <div class="section-title">
@@ -233,33 +246,8 @@
 </section>
 <!-- Work Section End -->
 
-<!-- lightbox Start -->
-<div class="lightbox">
-  <div class="img-box">
-    <div class="lightbox-close">&times;</div>
-    <img src="img/works/large/2.jpg" class="lightbox-img" alt="img">
-    <div class="lightbox-caption">
-      <div class="lightbox-category">
-        <!-- Wedding Photography -->
-      </div>
-      <div class="lightbox-counter">
-        <!-- 6/2 -->
-      </div>
-    </div>
-    <div class="lightbox-controls">
-      <div class="prev">
-        <img src="img/icons/prev.svg" alt="prev">
-      </div>
-      <div class="next">
-        <img src="img/icons/next.svg" alt="next">
-      </div>
-    </div>
-  </div>
-</div>
-<!-- lightbox End -->
-
 <!-- Contact Section Start -->
-<section class="contact-section">
+<section class="contact-section" id="contact">
   <div class="container">
     <div class="row">
       <div class="contact-img">
@@ -331,6 +319,31 @@
 
 <!-- copyright text -->
 <p class="copyright">&copy; 2020 The WebShala</p>
+
+<!-- lightbox Start -->
+<div class="lightbox">
+  <div class="img-box">
+    <div class="lightbox-close">&times;</div>
+    <img src="img/works/large/2.jpg" class="lightbox-img" alt="img">
+    <div class="lightbox-caption">
+      <div class="lightbox-category">
+        <!-- Wedding Photography -->
+      </div>
+      <div class="lightbox-counter">
+        <!-- 6/2 -->
+      </div>
+    </div>
+    <div class="lightbox-controls">
+      <div class="prev">
+        <img src="img/icons/prev.svg" alt="prev">
+      </div>
+      <div class="next">
+        <img src="img/icons/next.svg" alt="next">
+      </div>
+    </div>
+  </div>
+</div>
+<!-- lightbox End -->
 
 <script src="js/jquery.min.js"></script>
 <script src="js/main.js"></script>

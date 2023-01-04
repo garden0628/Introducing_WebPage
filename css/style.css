@@ -88,6 +88,35 @@ button{
 .btn-01:focus{
   outline: none;
 }
+
+/* Preloader */
+.preloader{
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #111111;
+  z-index: 1099;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.6s ease;
+}
+.preloader.loaded{
+  visibility: hidden;
+  opacity: 0;
+  z-index: -99;
+}
+.preloader .loader{
+  height: 30px;
+  width: 30px;
+  border: 2px solid #FF9800;
+  border-right: 2px solid transparent;
+  border-radius: 50%;
+  animation: ani01 2s linear infinite;
+}
+
 /* Header */
 .header{
   position: absolute;
@@ -95,6 +124,11 @@ button{
   top: 0;
   width: 100%;
   z-index: 99;
+  transition: all 0.5s ease;
+}
+.header.fixed{
+  background-color: #ffffff;
+  position: fixed;
 }
 .header .brand-name{
   /* background-color: red; */
@@ -107,6 +141,54 @@ button{
   text-transform: uppercase;
   font-weight: 900;
   letter-spacing: 2px;
+}
+.header.fixed .brand-name a{
+  color: #000000;
+}
+.header .nav-toggle{
+  width: 40px;
+  height: 34px;
+  border: 1px solid #ffffff;
+  border-radius: 3px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s ease;
+  display: none;
+}
+.header.fixed .nav-toggle{
+  border-color: #000000;
+}
+.header .nav-toggle span{
+  height: 1px;
+  display: block;
+  width: 16px;
+  background-color: #ffffff;
+  position: relative;
+  transition: all 0.5s ease;
+}
+.header .nav-toggle span:before,
+.header .nav-toggle span:after{
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 1px;
+  width: 100%;
+  background-color: #ffffff;
+  transition: all 0.5s ease;
+}
+.header.fixed .nav-toggle span,
+.header.fixed .nav-toggle span:before,
+.header.fixed .nav-toggle span:after{
+  background-color: #000000;
+}
+.header .nav-toggle span:before{
+  transform: translateY(-6px);
+}
+.header .nav-toggle span:after{
+  transform: translateY(6px);
 }
 .header .nav{
   /* background-color: gray; */
@@ -130,6 +212,10 @@ button{
   display: block;
   transition: all 0.5s ease;
 }
+.header.fixed .nav ul li a{
+  color: #000000;
+}
+.header.fixed .nav ul li a:hover,
 .header .nav ul li a:hover{
   color: #ff9800;
 }
@@ -284,8 +370,7 @@ button{
 .service-section .service-item{
   flex: 0 0 33.33%;
   max-width: 33.33%;
-  padding: 0 15px;
-  margin-bottom: 30px;
+  padding: 15px;
 }
 .service-section .service-item-inner{
   position: relative;
@@ -332,13 +417,12 @@ button{
 
 /* Work Section */
 .work-section{
-  padding: 50px 0 0;
+  padding: 80px 0 0;
 }
 .work-section .work-item{
   flex: 0 0 33.33%;
   max-width: 33.33%;
-  padding: 0 15px;
-  margin-bottom: 30px;
+  padding: 15px;
 }
 .work-section .work-item-inner img{
   width: 100%;
@@ -473,7 +557,7 @@ opacity: 1;
 
 /* Contact Section */
 .contact-section{
-  padding: 50px 0 80px;
+  padding: 80px 0 80px;
 }
 .contact-section .contact-img{
   flex: 0 0 100%;
@@ -594,4 +678,79 @@ opacity: 1;
   text-align: center;
   color: #555555;
   font-size: 16px;
+}
+
+@media(min-width: 768px){
+  .header .nav{
+    display: block!important;
+  }
+}
+@media(max-width: 767px){
+  .header{
+    padding: 7px 0;
+    position: fixed;
+  }
+  .header .nav-toggle{
+    display: flex;
+    margin-right: 15px;
+  }
+  .header .nav{
+    flex: 0 0 100%;
+    max-width: 100%;
+    background-color: #ffffff;
+    padding: 0;
+    display: none;
+  }
+  .header.fixed .nav{
+    border-top: 1px solid #cccccc;
+  }
+  .header .nav ul li{
+    display: block;
+    margin-right: 25px;
+  }
+  .header.fixed .nav ul li a,
+  .header .nav ul li a{
+    color: #000000;
+    padding: 15px 0;
+  }
+  .home-section .home-content h1{
+    font-size: 40px;
+  }
+  .about-section .about-img{
+    margin-bottom: 30px;
+  }
+  .about-section .about-content,
+  .about-section .about-img{
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  .service-section .service-item{
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+
+@media(max-width: 575px){
+  .home-section .home-content h1{
+    font-size: 25px;
+    letter-spacing: 5px;
+  }
+  .about-section .about-content .stats .stat-box{
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+  .contact-section .contact-info .info-item,
+  .contact-section .contact-form .form .input-group.left,
+  .contact-section .contact-form .form .input-group.right,
+  .work-section .work-item,
+  .service-section .service-item{
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  .contact-section .contact-form{
+    padding: 0 35px;
+  }
+  .contact-section .contact-form .form{
+    padding: 55px 5px;
+  }
 }
